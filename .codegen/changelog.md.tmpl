@@ -1,0 +1,12 @@
+# Version changelog
+
+## {{.Version}}
+{{- range .GroupChanges}}
+
+### {{.Type.Message}}
+{{range .Changes}}
+ * {{.}}.
+{{- end}}
+{{end}}
+
+## {{.PrevVersion}}

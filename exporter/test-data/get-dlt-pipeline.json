@@ -1,0 +1,67 @@
+{
+  "creator_user_name": "user@domain.com",
+  "last_modified": 1658214361131,
+  "latest_updates": [
+  ],
+  "name": "Test DLT",
+  "pipeline_id": "123",
+  "run_as_user_name": "user@domain.com",
+  "spec": {
+    "channel": "CURRENT",
+    "clusters": [
+      {
+        "label": "default",
+        "num_workers": 1,
+        "aws_attributes": {
+          "instance_profile_arn": "123"
+        },
+        "instance_pool_id": "123",
+        "driver_instance_pool_id": "123",
+        "init_scripts": [
+          {
+            "dbfs": {
+              "destination": "dbfs:/FileStore/jars/test.jar"
+            }
+          },
+          {
+            "workspace": {
+              "destination": "/init.sh"
+            }
+          }            
+        ],
+        "spark_conf": {
+          "fs.azure.account.auth.type": "OAuth",
+          "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+          "fs.azure.account.oauth2.client.secret": "{{secrets/some-kv-scope/test-secret}}"
+        }
+      }
+    ],
+    "continuous": true,
+    "development": true,
+    "edition": "advanced",
+    "id": "123",
+    "libraries": [
+      {
+        "notebook": {
+          "path": "/Users/user@domain.com/Test DLT"
+        }
+      },
+      {
+        "file": {
+          "path": "/Repos/user@domain.com/repo/Test DLT"
+        }
+      }
+    ],
+    "notifications": [
+       {
+          "email_recipients": ["user@domain.com"],
+          "alerts": ["on-flow-failure", "on-update-failure"]
+       }
+    ],
+    "name": "Test DLT",
+    "photon": false,
+    "storage": "dbfs:/pipelines/9ab12322-ccef-4539-8bf1-a43a95667dac",
+    "target": "test"
+  },
+  "state": "IDLE"
+}

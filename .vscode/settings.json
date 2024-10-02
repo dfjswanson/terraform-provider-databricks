@@ -1,0 +1,11 @@
+{
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.delveConfig": {
+        "apiVersion": 2,
+        "showGlobalVariables": true
+    },
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.useCodeSnippetsOnFunctionSuggestWithoutType": true
+}
